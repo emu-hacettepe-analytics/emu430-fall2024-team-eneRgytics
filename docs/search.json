@@ -2,16 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Team XXX",
+    "title": "Team eneRgytics",
     "section": "",
-    "text": "This is our project webpage.\nPlease stay tuned to follow our project activities.\nThis is our template.\n\nTeam Members\n\nEdin_Džeko\nDušan Tadić\nFrederico Rodrigues de Paula Santos\nSebastian Szymański\n\n\n\nProject Topic\n\n\nData Set\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n Back to top"
+    "text": "Welcome! This is our project webpage.\nPlease stay tuned to follow our project activities.\n\n\n\n\n\n\nTeam Member\n\nAhmet Özcan\nEda Yılmaz\nSemih Güneş\n\n\n\nProject Topic\n\nThis project examines the impact of the removal of daylight saving time (DST) on electricity consumption in Turkey after 2016.\nTurkey is located between the 26° and 45° eastern meridians. Since there are 19 meridians between Turkey’s easternmost and westernmost points, the time difference between these points is 1 hour and 16 minutes. Therefore, before 2016, Turkey used the GMT+2 time zone (30° longitude) for 5 months of the year and switched to the GMT+3 time zone (45° longitude) as daylight saving time for the remaining 7 months.\nAfter 2016, Turkey has been using the GMT+3 time zone throughout the year.\nTo observe changes in electricity consumption, we use a dataset provided by the Turkish Statistical Institute. This dataset shows the amount of electricity consumed by households in each province in kilowatts (kW) until 2021. Based on this data, we conduct an analysis to examine the effect of removing DST on electricity consumption at the provincial level.\n\n\nProject Teaser\n\n\n\n\n Back to top"
   },
   {
     "objectID": "analysis.html",
