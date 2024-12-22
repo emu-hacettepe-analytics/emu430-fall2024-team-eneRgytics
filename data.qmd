@@ -5,9 +5,24 @@ title: "Data"
 ![](images/datacat.mp4.gif){fig-align="center" width="13.7cm" height="13cm"}
 
 # Data Sources
+<style>
+  .button {
+    padding: 7px 18px;
+    border: 1px solid blue;
+    text-decoration: none;
+    color: blue;
+    border-radius: 5px;
+  }
+</style>
 
-1.  [Household Electricity Consumption](https://data.tuik.gov.tr/)
-2.  [Street Light Electricity Consumption](https://data.tuik.gov.tr/)
+<div>
+1.
+<a href=https://data.tuik.gov.tr/" class="button">Household Electricity Consumption</a>
+
+2. 
+<a href=https://data.tuik.gov.tr/" class="button">Street Light Electricity Consumption</a>
+
+</div>
 
 # General Information About Data
 
@@ -23,9 +38,24 @@ Our objective is to analyze the impact of abolishing daylight saving time (DST) 
 
 # Our Data Sets
 
-1.  [click here](https://drive.google.com/uc?export=download&id=1fmDbdAFxbrIulAWriuQ9JfJHpSoMOu3g)
+<style>
+  .button {
+    padding: 7px 18px;
+    border: 1px solid blue;
+    text-decoration: none;
+    color: blue;
+    border-radius: 5px;
+  }
+</style>
 
-2.  
+<div>
+1. 
+<a href=https://drive.google.com/uc?export=download&id=1fmDbdAFxbrIulAWriuQ9JfJHpSoMOu3g/" class="button">Click here to download .Rdata</a>
+  
+  
+ 
+</div>
+
 
 # Conducted Preprocessing
 
