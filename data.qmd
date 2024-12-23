@@ -5,6 +5,7 @@ title: "Data"
 ![](images/datacat.mp4.gif){fig-align="center" width="13.7cm" height="13cm"}
 
 # Data Sources
+
 <style>
   .button {
     padding: 7px 18px;
@@ -16,11 +17,10 @@ title: "Data"
 </style>
 
 <div>
-1.
-<a href=https://data.tuik.gov.tr/" class="button">Household Electricity Consumption</a>
 
-2. 
-<a href=https://data.tuik.gov.tr/" class="button">Street Light Electricity Consumption</a>
+1.  <a href=https://biruni.tuik.gov.tr/medas/?locale=tr" class="button">Household Electricity Consumption</a>
+
+2.  <a href=https://biruni.tuik.gov.tr/medas/?locale=tr" class="button">Street Light Electricity Consumption</a>
 
 </div>
 
@@ -49,16 +49,16 @@ Our objective is to analyze the impact of abolishing daylight saving time (DST) 
 </style>
 
 <div>
-1. 
-<a href=https://drive.google.com/uc?export=download&id=1fmDbdAFxbrIulAWriuQ9JfJHpSoMOu3g/" class="button">Click here to download .Rdata</a>
-  
-  
- 
+
+1.  <a href=https://drive.google.com/uc?export=download&id=1fmDbdAFxbrIulAWriuQ9JfJHpSoMOu3g/" class="button">Click here to download .Rdata</a>
+
 </div>
 
+# Data Preprocessing
 
-# Conducted Preprocessing
+First we upload the data set
 
+<<<<<<< HEAD
 
 ```{r}
 load("veri.RData")
@@ -74,3 +74,14 @@ kable(head(veri, 10))
 ```{r}
 kable(summary(veri))
 ```
+=======
+```{r}
+install.packages("readxl")
+library(readxl)
+
+data_set <- "C:/Users/asus/Desktop/data_set.xls"
+data <- read_excel(data_set)
+```
+
+Second, we convert Turkish characters to English characters so that the code works correctly
+>>>>>>> 4f34b371ab3138010f6cb540828094674aa66e64
