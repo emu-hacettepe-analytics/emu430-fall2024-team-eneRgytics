@@ -59,4 +59,18 @@ Our objective is to analyze the impact of abolishing daylight saving time (DST) 
 
 # Conducted Preprocessing
 
-na tr -\> eng
+
+```{r}
+load("veri.RData")
+library(knitr)
+kable(head(veri, 10))
+```
+
+```{r}
+
+```
+
+
+```{r}
+kable(summary(veri))
+```
