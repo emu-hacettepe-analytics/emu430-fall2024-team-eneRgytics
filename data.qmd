@@ -73,13 +73,6 @@ kable(summary(veri))
 ```
 =======
 
-install.packages("readxl")
-library(readxl)
-
-data_set <- "C:/Users/asus/Desktop/data_set.xls"
-data <- read_excel(data_set)
-
-
 >>>>>>> 4bd7541c02c5a67b6389abbc78046d4350e987a1
 Second, we convert Turkish characters to English characters so that the code works correctly
 >>>>>>> 4f34b371ab3138010f6cb540828094674aa66e64
