@@ -66,9 +66,6 @@ library(knitr)
 kable(head(veri, 10))
 ```
 
-```{r}
-
-```
 
 
 ```{r}
