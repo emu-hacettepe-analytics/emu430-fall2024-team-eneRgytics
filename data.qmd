@@ -20,8 +20,6 @@ title: "Data"
 
 1.  <a href=https://biruni.tuik.gov.tr/medas/?locale=tr" class="button">Household Electricity Consumption</a>
 
-2.  <a href=https://biruni.tuik.gov.tr/medas/?locale=tr" class="button">Street Light Electricity Consumption</a>
-
 </div>
 
 # General Information About Data
@@ -57,13 +55,5 @@ Our objective is to analyze the impact of abolishing daylight saving time (DST) 
 # Data Preprocessing
 
 First we upload the data set
-
-```{r}
-install.packages("readxl")
-library(readxl)
-
-data_set <- "C:/Users/asus/Desktop/data_set.xls"
-data <- read_excel(data_set)
-```
 
 Second, we convert Turkish characters to English characters so that the code works correctly
