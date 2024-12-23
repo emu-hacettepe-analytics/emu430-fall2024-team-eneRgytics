@@ -11,11 +11,11 @@ Please stay tuned to follow our project activities.
 
 # Team Member
 
-1.  [Ahmet Özcan](https://emu-hacettepe-analytics.github.io/emu430-fall2024-aozcanlab/)
+1.  [Ahmet Czcan](https://emu-hacettepe-analytics.github.io/emu430-fall2024-aozcanlab/)
 
-2.  [Eda Yılmaz](https://emu-hacettepe-analytics.github.io/emu430-fall2024-edayilmazlab/)
+2.  [Eda YD1lmaz](https://emu-hacettepe-analytics.github.io/emu430-fall2024-edayilmazlab/)
 
-3.  [Semih Güneş](https://emu-hacettepe-analytics.github.io/emu430-fall2024-SemihGuneslab/)
+3.  [Semih GC\<neE](https://emu-hacettepe-analytics.github.io/emu430-fall2024-SemihGuneslab/)
 
 # Project Topic
 
@@ -23,7 +23,7 @@ Please stay tuned to follow our project activities.
 
 This project examines the impact of the removal of daylight saving time (DST) on electricity consumption in Turkey after 2016.
 
-Turkey is located between the 26° and 45° eastern meridians. Since there are 19 meridians between Turkey's easternmost and westernmost points, the time difference between these points is 1 hour and 16 minutes. Therefore, before 2016, Turkey used the GMT+2 time zone (30° longitude) for 5 months of the year and switched to the GMT+3 time zone (45° longitude) as daylight saving time for the remaining 7 months.
+Turkey is located between the 26B0 and 45B0 eastern meridians. Since there are 19 meridians between Turkey's easternmost and westernmost points, the time difference between these points is 1 hour and 16 minutes. Therefore, before 2016, Turkey used the GMT+2 time zone (30B0 longitude) for 5 months of the year and switched to the GMT+3 time zone (45B0 longitude) as daylight saving time for the remaining 7 months.
 
 After 2016, Turkey has been using the GMT+3 time zone throughout the year.
 
