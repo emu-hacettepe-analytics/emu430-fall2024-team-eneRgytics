@@ -2,8 +2,38 @@
 title: "Analysis"
 ---
 
-About this site
-
+bölgesel ortalama çizgi grafiği
 ```{r}
-1 + 1
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
+load("veri.RData")
+library(tidyr)
+library(ggplot2)
+library(dplyr)
+
+
+veri_long <- veri |>
+  pivot_longer(("2001":"2021"), names_to = "Year", values_to = "consumption")
+veri_long$Year <- as.numeric(veri_long$Year)
+
+Region_mean <- veri_long |> 
+  group_by(Year, Region) |>                                 
+  summarise(Mean_consumption = mean(consumption, na.rm = TRUE), .groups = "drop") |>  
+  ungroup()                                                  
+
+my_color <- "#465945"
+ggplot(Region_mean, aes(x = Year, y = Mean_consumption, color = Region, group = Region)) +
+  geom_line(size = 0.8) +                                      
+  geom_point(size = 1) +                                     
+  labs(title = "Average Electricity Consumption in the Region by Year",
+       x = "Years",
+       y = "Total Consumption",
+       color = "Regions") +
+  theme_minimal() +                                          
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+  geom_vline(xintercept = 2016, color = my_color, size = 0.3) +
+  geom_hline(yintercept = 0, color = "darkgray", size = 0.8) + 
+  geom_vline(xintercept = min(Region_mean$Year), color = "darkgray", size = 0.8) 
+
 ```
