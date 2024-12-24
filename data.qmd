@@ -25,11 +25,14 @@ execute:
 
 1.  <a href=https://biruni.tuik.gov.tr/medas/?locale=tr" class="button">Household Electricity Consumption</a>
 
+
+2.  <a href=https://gist.github.com/abdullahoguk/ee03c26a23dca6eda9c480b4967e77b6#file-il-csv-L1" class="button">Latitudes and longitudes of cities</a>
+
 </div>
 
 # General Information About Data
 
-This project utilizes two datasets to analyze the energy consumption trends in Turkey, focusing on the effects of the daylight saving time (DST) policy removal in 2016. The first dataset contains detailed information on residential electricity consumption across all 81 provinces, providing valuable insights into regional variations and usage patterns. The second dataset focuses on the electricity consumption of street lighting, an important factor in understanding public energy usage. Together, these datasets cover periods before and after the abolition of DST, enabling a comprehensive analysis of its impact on overall energy consumption. By examining these datasets, the project aims to uncover meaningful trends and implications for energy efficiency, cost management, and policy decisions.
+This project includes detailed information on residential electricity consumption in all 81 provinces to analyse energy consumption trends in Turkey, focusing on the effects of the abolition of daylight saving time in 2016, providing valuable insights on regional differences and usage patterns. This dataset covers the periods before and after the abolition of daylight saving time, enabling a comprehensive analysis of its impact on overall energy consumption. By analysing this dataset, the project aims to uncover meaningful trends and implications for energy efficiency, cost management and policy decisions.
 
 # Why We Selected This Data
 
@@ -62,22 +65,34 @@ Our objective is to analyze the impact of abolishing daylight saving time (DST) 
 First we loaded our data and then looked at the number of NAs. There are no NAs in our data. There were Turkish characters in our data, and we convert Turkish characters to English characters so that the code works correctly, and we displayed the first sixteen lines of the dataset on your web page for ease of checking the operations performed.
 
 ```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
 load("veri.RData")
 library(knitr)
 kable(head(veri, 16))
 ```
 
 ```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
 total_of_numbers_NA <- sum(is.na(veri))
 total_of_numbers_NA
 ```
 
 
 ```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
 kable(summary(veri))
 ```
 
 ```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
 library(stringi)
 veri$City <- lapply(veri$City, function(x) {
   ifelse (is.character(x), stri_trans_general(x, "Latin-ASCII"), x
