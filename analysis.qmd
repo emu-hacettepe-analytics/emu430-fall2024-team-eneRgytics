@@ -88,7 +88,107 @@ ggplot(annualy_tot, aes(x = as.factor(Year), y = total_consumption)) +
 
 
 
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
+kordinat <- data.frame(
+  City = c("Adana-1", "Adiyaman-2", "Afyonkarahisar-3", "Agri-4", "Amasya-5", "Ankara-6", "Antalya-7", "Artvin-8", "Aydın-9", "Balıkesir-10", "Bilecik-11", "Bingol-12", "Bitlis-13", "Bolu-14", "Burdur-15", "Bursa-16", "Canakkale-17", "Cankiri-18", "Corum-19", "Denizli-20", "Diyarbakir-21", "Edirne-22", "Elazig-23", "Erzincan-24", "Erzurum-25", "Eskisehir-26", "Gaziantep-27", "Giresun-28", "Gumushane-29", "Hakkari-30", "Hatay-31", "Isparta-32", "Mersin-33", "İstanbul-34", "İzmir-35", "Kars-36", "Kastamonu-37", "Kayseri-38", "Kirklareli-39", "Kirsehir-40", "Kocaeli-41", "Konya-42", "Kutahya-43", "Malatya-44", "Manisa-45", "Kahramanmaras-46", "Mardin-47", "Mugla-48", "Mus-49", "Nevsehir-50", "Nigde-51", "Ordu-52", "Rize-53", "Sakarya-54", "Samsun-55", "Siirt-56", "Sinop-57", "Sivas-58", "Tekirdag-59", "Tokat-60", "Trabzon-61", "Tunceli-62", "Sanliurfa-63", "Usak-64", "Van-65", "Yozgat-66", "Zonguldak-67", "Aksaray-68", "Bayburt-69", "Karaman-70","Kirikkale-71", "Batman-72", "Sirnak-73", "Bartin-74", "Ardahan-75", "Igdir-76", "Yalova-77", "Karabuk-78", "Kilis-79", "Osmaniye-80", "Düzce-81"),
+  Latitude = c(37.00000000, 37.76416670, 38.76376000,	39.72166670, 40.65000000,	39.92077000, 36.88414000,	41.18333330, 37.84440000,	39.64836900, 40.15013100, 38.88534900,	38.40000000, 40.73947900,	37.72690900, 40.18257000,	40.15531200, 40.60000000,	40.55055560, 37.77652000,	37.91441000, 41.66666670, 38.68096900,	39.75000000, 39.90431890,	39.78430200, 37.06622000,	40.91281100, 40.46027780,	37.58333330, 36.40184880,	37.76666670, 36.80000000, 41.00527000,	38.41885000, 40.59267000,	41.38871000, 38.73333330,	41.73333330, 39.15000000,	40.85327040, 37.86666670,	39.41666670, 38.35519000, 38.61909900,	37.58333330, 37.31223610,	37.21527780, 38.74329260,	38.62442000, 37.96666670,	40.98333330, 41.02005000,	40.75687930, 41.29278200, 37.94429000,	42.02642220, 39.74766200,	40.98333330, 40.31666670,	41.00000000, 39.10798680,	37.15000000, 38.68230100,	38.49416670, 39.82000000, 41.45640900,	38.36869000, 40.25516900,	37.17593000, 39.84682100,	37.88116800, 37.51638890,	41.63444440, 41.11048100,	39.91666670, 40.65000000, 41.20000000,	36.71839900, 37.06805000,	40.84384900),
+  Longitude = c(35.32133330, 38.27616670, 30.54034000, 43.05666670, 35.83333330, 32.85411000,	30.70563000, 41.81666670,	27.84580000, 27.88261000,	29.98306100, 40.49829100, 42.11666670,	31.61156100, 30.28887600,	29.06687000, 26.41416000,	33.61666670, 34.95555560,	29.08639000, 40.23062900,	26.56666670, 39.22639800, 39.50000000,	41.26788530, 30.51922000,	37.38332000, 38.38953000,	39.48138890, 43.73333330,	36.34980970, 30.55000000,	34.63333330, 28.97696000, 27.12872000,	43.07783100, 33.78273000,	35.48333330, 27.21666670,	34.16666670, 29.88152030,	32.48333330, 29.98333330,	38.30946000, 27.42892100, 36.93333330,	40.73511200, 28.36361110,	41.50648230, 34.72396900,	34.68333330, 37.88333330,	40.52344900, 30.37813800,	36.33128000, 41.93288000, 35.15507450,	37.01787900, 27.51666670,	36.55000000, 39.73333330,	39.54016720, 38.80000000,	29.40819000, 43.38000000,	34.80444440, 31.79873100, 34.03698000,	40.22488000, 33.22874800,	33.51525100, 41.13509000,	42.46111110, 32.33750000,	42.70217100, 44.03333330,	29.26666670, 32.63333330, 37.12122000,	36.26158900, 31.15654000)
+)
 
 
+library(stringi)
+veri$City <- lapply(veri$City, function(x) {
+  ifelse (is.character(x), stri_trans_general(x, "Latin-ASCII"), x
+)})
+
+
+veri_summary <- veri_long %>%
+  mutate(Period = ifelse(Year < 2016, "Before 2016", "After 2016")) %>%
+  group_by(City, Period) %>%
+  summarise(Total_consumption = sum(consumption, na.rm = TRUE)) %>%
+  pivot_wider(names_from = Period, values_from = Total_consumption) |> 
+  left_join(kordinat, by = "City")
+
+
+library(leaflet)
+
+leaflet(data = veri_summary) %>%
+  addTiles() %>%
+  addCircleMarkers(
+    lng = ~Longitude,
+    lat = ~Latitude,
+    radius = ~sqrt(`Before 2016` + `After 2016`) / 500, 
+    color = "#00335d",
+    fillColor = "#ffa07a",
+    fillOpacity = 0.7,
+    popup = ~paste(
+      "<b>City:</b>", City, "<br>",
+      "<b>Before 2016:</b>", `Before 2016`, "<br>",
+      "<b>After 2016:</b>", `After 2016`, "<br>",
+      "<b>Total:</b>", `After 2016` + `Before 2016`
+    )
+  ) %>%
+  addLegend(
+    position = "bottomright",
+    title = "Electricity Consumption",
+    labels = c("Before 2016", "After 2016"),
+    colors = c("#ffa07a", "#00335d")
+  )
+
+
+
+```
+
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
+library(leaflet)
+library(dplyr) 
+koordinates <- data.frame(
+  Region = c("Akdeniz Bolgesi", "Marmara Bolgesi", "Ege Bolgesi", 
+            "Ic Anadolu Bolgesi", "Karadeniz Bolgesi", 
+            "Dogu Anadolu Bolgesi", "Guneydogu Anadolu Bolgesi"),
+  Latitude = c(37.0000, 40.9919, 38.4192, 39.9208, 41.0015, 39.9208, 37.9158),
+  Longitude = c(35.3213, 28.7272, 27.1287, 32.8541, 37.8714, 41.2768, 40.2288)
+)
+
+veri_summary <- veri_long %>%
+  mutate(Period = ifelse(as.numeric(Year) < 2016, "Before 2016", "After 2016")) %>%
+  group_by(Region, Period) %>%
+  summarise(Total_consumption = sum(consumption, na.rm = TRUE)) %>%
+  pivot_wider(names_from = Period, values_from = Total_consumption) |> 
+  left_join(koordinates, by = "Region")
+
+
+library(leaflet)
+
+leaflet(data = veri_summary) %>%
+  addTiles() %>%
+  addCircleMarkers(
+    lng = ~Longitude,
+    lat = ~Latitude,
+    radius = ~sqrt(`Before 2016` + `After 2016`) / 300, 
+    color = "#00335d",
+    fillColor = "#ffa07a",
+    fillOpacity = 0.6,
+    popup = ~paste(
+      "<b>Region:</b>", Region, "<br>",
+      "<b>Before 2016:</b>", `Before 2016`, "<br>",
+      "<b>After 2016:</b>", `After 2016`, "<br>",
+      "<b>Total:</b>", `After 2016` + `Before 2016`
+    )
+  ) %>%
+  addLegend(
+    position = "bottomright",
+    title = "Electricity Consumption",
+    labels = c("Before 2016", "After 2016"),
+    colors = c("#ffa07a", "#00335d")
+  )
+```
 
 
