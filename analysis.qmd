@@ -1,5 +1,10 @@
 ---
 title: "Analysis"
+
+execute: 
+  warning: false
+  message: false
+  echo: false
 ---
 
 bölgesel ortalama çizgi grafiği
@@ -28,7 +33,7 @@ ggplot(Region_mean, aes(x = Year, y = Mean_consumption, color = Region, group = 
   geom_point(size = 1) +                                     
   labs(title = "Average Electricity Consumption in the Region by Year",
        x = "Years",
-       y = "Total Consumption",
+       y = "Average Consumption",
        color = "Regions") +
   theme_minimal() +                                          
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
@@ -37,3 +42,53 @@ ggplot(Region_mean, aes(x = Year, y = Mean_consumption, color = Region, group = 
   geom_vline(xintercept = min(Region_mean$Year), color = "darkgray", size = 0.8) 
 
 ```
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
+load("veri.RData")
+library(tidyr)
+library(ggplot2)
+library(dplyr)
+
+
+ggplot(veri_long, aes(x = as.factor(Year), y = consumption)) +
+  geom_boxplot(fill = "lightblue", color = "darkblue") +
+  geom_point(alpha = 0.3, color = "#0a3b5d") +
+  scale_y_log10() +
+  labs(title = "Yıllık Elektrik Tuketimi Dagılimi",
+       x = "Years",
+       y = "Consumption") +
+  theme_minimal() +                                      
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
+library(ggplot2)
+library(dplyr)
+annualy_tot <- veri_long |>
+  group_by(Year) |>
+  summarise(total_consumption = sum(consumption))
+
+ggplot(annualy_tot, aes(x = as.factor(Year), y = total_consumption)) +
+  geom_bar(stat = "identity", fill = "lightblue", color = "darkblue") +
+  labs(title = "Total Annual Electricity Consumption",
+       x = "Years",
+       y = "Total Electricity Consumption") +
+  theme_minimal() +                                                     
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+
+
+
+
+
+
+
