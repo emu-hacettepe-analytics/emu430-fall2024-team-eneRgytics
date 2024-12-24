@@ -57,7 +57,7 @@ ggplot(veri_long, aes(x = as.factor(Year), y = consumption)) +
   geom_boxplot(fill = "lightblue", color = "darkblue") +
   geom_point(alpha = 0.3, color = "#0a3b5d") +
   scale_y_log10() +
-  labs(title = "Yıllık Elektrik Tuketimi Dagılimi",
+  labs(title = "Annual Electricity Consumption",
        x = "Years",
        y = "Consumption") +
   theme_minimal() +                                      
