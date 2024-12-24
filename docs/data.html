@@ -158,7 +158,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#why-we-selected-this-data" id="toc-why-we-selected-this-data" class="nav-link" data-scroll-target="#why-we-selected-this-data">Why We Selected This Data</a></li>
   <li><a href="#our-objective" id="toc-our-objective" class="nav-link" data-scroll-target="#our-objective">Our Objective</a></li>
   <li><a href="#our-data-sets" id="toc-our-data-sets" class="nav-link" data-scroll-target="#our-data-sets">Our Data Sets</a></li>
-  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing">Data Preprocessing</a></li>
+  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing">Data Preprocessing</a>
+  <ul class="collapse">
+  <li><a href="#loaded-our-data" id="toc-loaded-our-data" class="nav-link" data-scroll-target="#loaded-our-data">Loaded Our Data</a></li>
+  <li><a href="#number-of-nas" id="toc-number-of-nas" class="nav-link" data-scroll-target="#number-of-nas">Number of NAs</a></li>
+  <li><a href="#summary-of-data" id="toc-summary-of-data" class="nav-link" data-scroll-target="#summary-of-data">Summary of Data</a></li>
+  <li><a href="#turkish-to-english-character-translation" id="toc-turkish-to-english-character-translation" class="nav-link" data-scroll-target="#turkish-to-english-character-translation">Turkish to English Character Translation</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -243,6 +249,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="data-preprocessing" class="level1">
 <h1>Data Preprocessing</h1>
 <p>First we loaded our data and then looked at the number of NAs. There are no NAs in our data. There were Turkish characters in our data, and we convert Turkish characters to English characters so that the code works correctly, and we displayed the first sixteen lines of the dataset on your web page for ease of checking the operations performed.</p>
+<section id="loaded-our-data" class="level3">
+<h3 class="anchored" data-anchor-id="loaded-our-data">Loaded Our Data</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
@@ -709,16 +717,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
+</section>
+<section id="number-of-nas" class="level3">
+<h3 class="anchored" data-anchor-id="number-of-nas">Number of NAs</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>total_of_numbers_NA <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(veri))</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>total_of_numbers_NA</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Number of NAs = "</span>, total_of_numbers_NA))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0</code></pre>
+<pre><code>[1] "Number of NAs = 0"</code></pre>
 </div>
 </div>
+</section>
+<section id="summary-of-data" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-data">Summary of Data</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
@@ -941,6 +955,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </div>
 </div>
+</section>
+<section id="turkish-to-english-character-translation" class="level3">
+<h3 class="anchored" data-anchor-id="turkish-to-english-character-translation">Turkish to English Character Translation</h3>
 <div class="cell">
 <details class="code-fold">
 <summary>Show code</summary>
@@ -1411,6 +1428,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
