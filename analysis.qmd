@@ -7,7 +7,12 @@ execute:
   echo: false
 ---
 
+<<<<<<< HEAD
 bC6lgesel ortalama C'izgi grafiDi
+=======
+bölgesel ortalama çizgi grafiği
+
+>>>>>>> b164b6ccce19f2d0e0f253258d58fcfc9461a83a
 ```{r}
 #| echo: true
 #| code-fold: true
@@ -64,7 +69,6 @@ ggplot(veri_long, aes(x = as.factor(Year), y = consumption)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-
 ```{r}
 #| echo: true
 #| code-fold: true
@@ -84,6 +88,48 @@ ggplot(annualy_tot, aes(x = as.factor(Year), y = total_consumption)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
+```{r fig.show = "hide"}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
+load("veri.RData")
+library(tidyr)
+library(ggplot2)
+library(dplyr)
+
+colnames(veri)[colnames(veri) == "2015"] <- "X2015"
+colnames(veri)[colnames(veri) == "2016"] <- "X2016"
+
+
+veri$X2015 <- as.numeric(veri$X2015)
+veri$X2016 <- as.numeric(veri$X2016)
+
+
+veri <- na.omit(veri)
+
+
+veri <- veri %>%
+  mutate(Percentage_Increase = ((X2016 - X2015) / X2015) * 100)
+
+veri <- veri %>%
+  arrange(desc(Percentage_Increase))
+
+ggplot(veri, aes(x = Percentage_Increase, y = reorder(City, Percentage_Increase), fill = Percentage_Increase)) +
+  geom_bar(stat = "identity") +
+  scale_fill_gradient2(low = "blue", mid = "purple", high = "red", midpoint = 0, name = "Increase (%)") +
+  labs(
+    title = "Percentage Increase in Electricity Consumption (2016 vs 2015)",
+    x = "Percentage Increase",
+    y = "City"
+  ) +
+  theme_minimal() +
+  theme(
+    axis.text.y = element_text(size = 8, hjust = 1),   
+    axis.title.y = element_text(size = 12),            
+    axis.title.x = element_text(size = 12),           
+    plot.title = element_text(hjust = 0.5, size = 14), 
+    legend.position = "top"                           
+  )
 
 
 
@@ -198,3 +244,7 @@ leaflet(data = veri_summary) |>
 ```
 
 
+
+```
+
+![](Percentage_Increase_plot.png){fig-align="center"}
