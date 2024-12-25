@@ -25,19 +25,21 @@ execute:
 
 1.  <a href=https://biruni.tuik.gov.tr/medas/?locale=tr" class="button">Household Electricity Consumption</a>
 
+2.  <a href=https://gist.github.com/abdullahoguk/ee03c26a23dca6eda9c480b4967e77b6#file-il-csv-L1" class="button">Latitudes and longitudes of cities</a>
+
 </div>
 
 # General Information About Data
 
-This project utilizes two datasets to analyze the energy consumption trends in Turkey, focusing on the effects of the daylight saving time (DST) policy removal in 2016. The first dataset contains detailed information on residential electricity consumption across all 81 provinces, providing valuable insights into regional variations and usage patterns. The second dataset focuses on the electricity consumption of street lighting, an important factor in understanding public energy usage. Together, these datasets cover periods before and after the abolition of DST, enabling a comprehensive analysis of its impact on overall energy consumption. By examining these datasets, the project aims to uncover meaningful trends and implications for energy efficiency, cost management, and policy decisions.
+This project includes detailed information on household electricity consumption in all 81 provinces to analyse energy consumption trends in Turkey, focusing on the effects of the abolition of daylight saving time in 2016, providing valuable insights on regional differences and usage patterns. This dataset covers the periods before and after the abolition of daylight saving time, enabling a comprehensive analysis of its impact on overall energy consumption. By analysing this dataset, the project aims to uncover meaningful trends and implications for energy efficiency, cost management and policy decisions.
 
 # Why We Selected This Data
 
-The selection of these datasets was driven by their relevance and comprehensiveness in addressing the research question: the impact of abolishing daylight saving time (DST) on energy consumption in Turkey. The residential electricity consumption data from 81 provinces provides a detailed perspective on how individual households adapted to the policy change, while the street lighting data captures a critical component of public electricity usage, particularly during evening hours. Together, these datasets enable a holistic analysis of energy consumption patterns before and after 2016, offering a unique opportunity to evaluate the policy's effectiveness and its broader implications on energy efficiency and sustainability.
+These datasets were selected on the basis of their relevance and comprehensiveness to answer the research question *'The impact of the abolition of summer time on energy consumption in Turkey'*. Household electricity consumption data from 81 provinces provide a detailed perspective on how individual households have adapted to the policy change. Overall, this dataset provides an important opportunity to analyse energy consumption data before and after 2016 together in order to better assess the impact of daylight saving time (DST) in Turkey.
 
 # Our Objective
 
-Our objective is to analyze the impact of abolishing daylight saving time (DST) in Turkey on energy consumption patterns. By examining residential electricity usage across 81 provinces and street lighting data, we aim to identify significant trends, evaluate the policy's effectiveness, and provide insights for future energy management strategies.
+Our objective is to analyse the impact of the abolition of daylight saving time (DST) on energy consumption patterns in Turkey. By analysing household electricity consumption in 81 provinces, our aims are to identify key trends, evaluate the effectiveness of the policy and provide foresight for future energy management strategies.
 
 # Our Data Sets
 
@@ -61,22 +63,44 @@ Our objective is to analyze the impact of abolishing daylight saving time (DST) 
 
 First we loaded our data and then looked at the number of NAs. There are no NAs in our data. There were Turkish characters in our data, and we convert Turkish characters to English characters so that the code works correctly, and we displayed the first sixteen lines of the dataset on your web page for ease of checking the operations performed.
 
+### Loaded Our Data
 ```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
 load("veri.RData")
 library(knitr)
 kable(head(veri, 16))
 ```
 
+
+### Number of NAs
 ```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
 total_of_numbers_NA <- sum(is.na(veri))
-total_of_numbers_NA
+print(paste0("Number of NAs = ", total_of_numbers_NA))
 ```
 
+<<<<<<< HEAD
+=======
+
+### Summary of Data
+>>>>>>> 12eb2b8a0df78d1c0b93b938b04cb400f0d6e7a6
 ```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
 kable(summary(veri))
 ```
 
+
+### Turkish to English Character Translation
 ```{r}
+#| echo: true
+#| code-fold: true
+#| code-summary: "Show code"
 library(stringi)
 veri$City <- lapply(veri$City, function(x) {
   ifelse (is.character(x), stri_trans_general(x, "Latin-ASCII"), x

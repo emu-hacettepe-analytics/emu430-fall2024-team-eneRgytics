@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -124,7 +158,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#why-we-selected-this-data" id="toc-why-we-selected-this-data" class="nav-link" data-scroll-target="#why-we-selected-this-data">Why We Selected This Data</a></li>
   <li><a href="#our-objective" id="toc-our-objective" class="nav-link" data-scroll-target="#our-objective">Our Objective</a></li>
   <li><a href="#our-data-sets" id="toc-our-data-sets" class="nav-link" data-scroll-target="#our-data-sets">Our Data Sets</a></li>
-  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing">Data Preprocessing</a></li>
+  <li><a href="#data-preprocessing" id="toc-data-preprocessing" class="nav-link" data-scroll-target="#data-preprocessing">Data Preprocessing</a>
+  <ul class="collapse">
+  <li><a href="#loaded-our-data" id="toc-loaded-our-data" class="nav-link" data-scroll-target="#loaded-our-data">Loaded Our Data</a></li>
+  <li><a href="#number-of-nas" id="toc-number-of-nas" class="nav-link" data-scroll-target="#number-of-nas">Number of NAs</a></li>
+  <li><a href="#summary-of-data" id="toc-summary-of-data" class="nav-link" data-scroll-target="#summary-of-data">Summary of Data</a></li>
+  <li><a href="#turkish-to-english-character-translation" id="toc-turkish-to-english-character-translation" class="nav-link" data-scroll-target="#turkish-to-english-character-translation">Turkish to English Character Translation</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -172,21 +212,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 <div>
 <ol type="1">
-<li><a href="https://biruni.tuik.gov.tr/medas/?locale=tr&quot;" class="button">Household Electricity Consumption</a></li>
+<li><p><a href="https://biruni.tuik.gov.tr/medas/?locale=tr&quot;" class="button">Household Electricity Consumption</a></p></li>
+<li><p><a href="https://gist.github.com/abdullahoguk/ee03c26a23dca6eda9c480b4967e77b6#file-il-csv-L1&quot;" class="button">Latitudes and longitudes of cities</a></p></li>
 </ol>
 </div>
 </section>
 <section id="general-information-about-data" class="level1">
 <h1>General Information About Data</h1>
-<p>This project utilizes two datasets to analyze the energy consumption trends in Turkey, focusing on the effects of the daylight saving time (DST) policy removal in 2016. The first dataset contains detailed information on residential electricity consumption across all 81 provinces, providing valuable insights into regional variations and usage patterns. The second dataset focuses on the electricity consumption of street lighting, an important factor in understanding public energy usage. Together, these datasets cover periods before and after the abolition of DST, enabling a comprehensive analysis of its impact on overall energy consumption. By examining these datasets, the project aims to uncover meaningful trends and implications for energy efficiency, cost management, and policy decisions.</p>
+<p>This project includes detailed information on household electricity consumption in all 81 provinces to analyse energy consumption trends in Turkey, focusing on the effects of the abolition of daylight saving time in 2016, providing valuable insights on regional differences and usage patterns. This dataset covers the periods before and after the abolition of daylight saving time, enabling a comprehensive analysis of its impact on overall energy consumption. By analysing this dataset, the project aims to uncover meaningful trends and implications for energy efficiency, cost management and policy decisions.</p>
 </section>
 <section id="why-we-selected-this-data" class="level1">
 <h1>Why We Selected This Data</h1>
-<p>The selection of these datasets was driven by their relevance and comprehensiveness in addressing the research question: the impact of abolishing daylight saving time (DST) on energy consumption in Turkey. The residential electricity consumption data from 81 provinces provides a detailed perspective on how individual households adapted to the policy change, while the street lighting data captures a critical component of public electricity usage, particularly during evening hours. Together, these datasets enable a holistic analysis of energy consumption patterns before and after 2016, offering a unique opportunity to evaluate the policy’s effectiveness and its broader implications on energy efficiency and sustainability.</p>
+<p>These datasets were selected on the basis of their relevance and comprehensiveness to answer the research question <em>‘The impact of the abolition of summer time on energy consumption in Turkey’</em>. Household electricity consumption data from 81 provinces provide a detailed perspective on how individual households have adapted to the policy change. Overall, this dataset provides an important opportunity to analyse energy consumption data before and after 2016 together in order to better assess the impact of daylight saving time (DST) in Turkey.</p>
 </section>
 <section id="our-objective" class="level1">
 <h1>Our Objective</h1>
-<p>Our objective is to analyze the impact of abolishing daylight saving time (DST) in Turkey on energy consumption patterns. By examining residential electricity usage across 81 provinces and street lighting data, we aim to identify significant trends, evaluate the policy’s effectiveness, and provide insights for future energy management strategies.</p>
+<p>Our objective is to analyse the impact of the abolition of daylight saving time (DST) on energy consumption patterns in Turkey. By analysing household electricity consumption in 81 provinces, our aims are to identify key trends, evaluate the effectiveness of the policy and provide foresight for future energy management strategies.</p>
 </section>
 <section id="our-data-sets" class="level1">
 <h1>Our Data Sets</h1>
@@ -208,7 +249,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="data-preprocessing" class="level1">
 <h1>Data Preprocessing</h1>
 <p>First we loaded our data and then looked at the number of NAs. There are no NAs in our data. There were Turkish characters in our data, and we convert Turkish characters to English characters so that the code works correctly, and we displayed the first sixteen lines of the dataset on your web page for ease of checking the operations performed.</p>
+<section id="loaded-our-data" class="level3">
+<h3 class="anchored" data-anchor-id="loaded-our-data">Loaded Our Data</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="st">"veri.RData"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(veri, <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
@@ -668,12 +717,27 @@ ul.task-list li input[type="checkbox"] {
 </table>
 </div>
 </div>
+</section>
+<section id="number-of-nas" class="level3">
+<h3 class="anchored" data-anchor-id="number-of-nas">Number of NAs</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>total_of_numbers_NA <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(veri))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste0</span>(<span class="st">"Number of NAs = "</span>, total_of_numbers_NA))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0</code></pre>
+<pre><code>[1] "Number of NAs = 0"</code></pre>
 </div>
 </div>
+</section>
+<section id="summary-of-data" class="level3">
+<h3 class="anchored" data-anchor-id="summary-of-data">Summary of Data</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">summary</span>(veri))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
@@ -891,7 +955,18 @@ ul.task-list li input[type="checkbox"] {
 </table>
 </div>
 </div>
+</section>
+<section id="turkish-to-english-character-translation" class="level3">
+<h3 class="anchored" data-anchor-id="turkish-to-english-character-translation">Turkish to English Character Translation</h3>
 <div class="cell">
+<details class="code-fold">
+<summary>Show code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringi)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>veri<span class="sc">$</span>City <span class="ot">&lt;-</span> <span class="fu">lapply</span>(veri<span class="sc">$</span>City, <span class="cf">function</span>(x) {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span> (<span class="fu">is.character</span>(x), <span class="fu">stri_trans_general</span>(x, <span class="st">"Latin-ASCII"</span>), x</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>)})</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">head</span>(veri, <span class="dv">16</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
@@ -1353,6 +1428,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 
 
+</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
