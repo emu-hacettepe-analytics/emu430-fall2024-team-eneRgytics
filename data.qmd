@@ -83,11 +83,9 @@ total_of_numbers_NA <- sum(is.na(veri))
 print(paste0("Number of NAs = ", total_of_numbers_NA))
 ```
 
-<<<<<<< HEAD
-=======
+
 
 ### Summary of Data
->>>>>>> 12eb2b8a0df78d1c0b93b938b04cb400f0d6e7a6
 ```{r}
 #| echo: true
 #| code-fold: true
