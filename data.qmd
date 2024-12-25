@@ -72,7 +72,6 @@ total_of_numbers_NA <- sum(is.na(veri))
 total_of_numbers_NA
 ```
 
-
 ```{r}
 kable(summary(veri))
 ```
