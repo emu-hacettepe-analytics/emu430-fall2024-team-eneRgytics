@@ -1,1 +1,35 @@
 /* css styles */
+body {
+    background-color: #f9f9f9; 
+    color: #333333; 
+}
+h1, h2, h3 {
+    color: #006d77; 
+}
+nav {
+    background-color: #; 
+}
+a {
+    color: #ffb703; 
+}
+a:hover {
+    color: #fb8500; 
+}
+.highlight {
+    background-color: #edf6f9; 
+    color: #023047;
+}
+.navbar {
+    background-color: #0e3a3f; /* Arka plan rengi */
+    color: white; /* Metin rengi */
+    border-bottom: 2px solid #000; /* Alt k??s??mda ??izgi */
+}
+
+.navbar a {
+    color: white; /* Link metin rengi */
+    text-decoration: none; /* Alt ??izgi kald??r */
+}
+
+.navbar a:hover {
+    color: #f1c5c0; /* Link ??zerine gelinceki renk */
+}
