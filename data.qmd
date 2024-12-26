@@ -35,7 +35,7 @@ This project includes detailed information on household electricity consumption 
 
 # Why We Selected This Data
 
-These datasets were selected on the basis of their relevance and comprehensiveness to answer the research question **???The impact of the permanent of summer time on energy consumption in Turkey???**. Household electricity consumption data from 81 provinces provide a detailed perspective on how individual households have adapted to the policy change. Overall, this dataset provides an important opportunity to analyse energy consumption data before and after 2016 together in order to better assess the impact of daylight saving time (DST) in Turkey.
+These datasets were selected on the basis of their relevance and comprehensiveness to answer the research question **"The impact of the permanent of summer time on energy consumption in Turkey"**. Household electricity consumption data from 81 provinces provide a detailed perspective on how individual households have adapted to the policy change. Overall, this dataset provides an important opportunity to analyse energy consumption data before and after 2016 together in order to better assess the impact of daylight saving time (DST) in Turkey.
 
 # Our Objective
 
