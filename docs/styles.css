@@ -20,16 +20,16 @@ a:hover {
     color: #023047;
 }
 .navbar {
-    background-color: #0e3a3f; /* Arka plan rengi */
-    color: white; /* Metin rengi */
-    border-bottom: 2px solid #000; /* Alt k??s??mda ??izgi */
+    background-color: #0e3a3f; 
+    color: white; 
+    border-bottom: 2px solid #000; 
 }
 
 .navbar a {
-    color: white; /* Link metin rengi */
-    text-decoration: none; /* Alt ??izgi kald??r */
+    color: white; 
+    text-decoration: none; 
 }
 
 .navbar a:hover {
-    color: #f1c5c0; /* Link ??zerine gelinceki renk */
+    color: #f1c5c0; 
 }
