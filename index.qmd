@@ -31,17 +31,32 @@ Please stay tuned to follow our project activities.
 
 </div>
 
-
 # Project Topic
 
 ![](images/image11.png)
 
-This project examines the impact of the removal of daylight saving time (DST) on electricity consumption in Turkey after 2016.
+This project examines the impact of the permanent daylight saving time (DST) on electricity consumption in Turkey after 2016.
 
-Turkey is located between the 26B0 and 45B0 eastern meridians. Since there are 19 meridians between Turkey's easternmost and westernmost points, the time difference between these points is 1 hour and 16 minutes. Therefore, before 2016, Turkey used the GMT+2 time zone (30B0 longitude) for 5 months of the year and switched to the GMT+3 time zone (45B0 longitude) as daylight saving time for the remaining 7 months.
+Turkey is located between the 26° and 45° eastern meridians. Since there are 19 meridians between Turkey’s easternmost and westernmost points, the time difference between these points is 1 hour and 16 minutes. Therefore, before 2016, Turkey used the GMT+2 time zone (30° longitude) for 5 months of the year and switched to the GMT+3 time zone (45° longitude) as daylight saving time for the remaining 7 months.
 
 After 2016, Turkey has been using the GMT+3 time zone throughout the year.
 
-To observe changes in electricity consumption, we use a dataset provided by the Turkish Statistical Institute. This dataset shows the amount of electricity consumed by households in each province in kilowatts (kW) until 2021. Based on this data, we conduct an analysis to examine the effect of removing DST on electricity consumption at the provincial level.
+To observe changes in electricity consumption, we use a dataset provided by the Turkish Statistical Institute. This dataset shows the amount of electricity consumed by households in each province in kilowatts (kW) until 2021. Based on this data, we analyze and examine the effect of permanent DST on electricity consumption at the provincial level.
+
+# Key Takeaway
+
+- The aim of the project is to analyze the impact of the permanent daylight saving time, which started in 2016, on household electricity use.
+
+- This project also examines whether the permanent daylight saving time achieved its goal of saving electricity in 2016.
+
+- The main dataset from **TÜİK** shows household electricity use in 81 provinces between 2001 and 2021.
+
+- The dataset "Latitudes and Longitudes of Cities" includes coordinates to show electricity use on the map of Turkey.
 
 # Project Teaser
+
+<div>
+
+<a href=https://drive.google.com/file/d/1eLNH9531SakowdwMurSKtxDLIwiiwpeW/view?usp=sharing" class="button">Click for Teaser</a>
+
+<div>

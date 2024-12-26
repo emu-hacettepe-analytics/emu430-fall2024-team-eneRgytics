@@ -9,6 +9,20 @@ execute:
   echo: false
 ---
 
+# Key Takeaway
+
+-   After transitioning to a permanent daylight saving time, an increase in electricity consumption was observed instead of the expected decrease.
+
+-   When comparing 2016 electricity consumption data with 2015 figures, an increase was recorded in 71 provinces, showing a rise compared to the previous year.
+
+-   On a regional level, areas with stable or declining electricity consumption trends experienced an increase under the permanent daylight saving time policy (notably in the Central Anatolia region).
+
+-   As a result of this analysis, it can be concluded that the permanent daylight saving time, implemented to save electricity and maximize daylight usage, did not reduce electricity consumption but rather led to an overall increase.
+
+# Average Electricity Consumption in the Region by Year
+
+In this graph, Turkey is evaluated on a regional basis. As seen from the graph, an increase is observed in other regions except for the Mediterranean region. Especially the Central Anatolia region, which was in a decreasing trend in 2015, started to increase after this implementation.
+
 ```{r}
 #| echo: true
 #| code-fold: true
@@ -17,7 +31,6 @@ load("veri.RData")
 library(tidyr)
 library(ggplot2)
 library(dplyr)
-
 
 veri_long <- veri |>
   pivot_longer(("2001":"2021"), names_to = "Year", values_to = "consumption")
@@ -44,6 +57,10 @@ ggplot(Region_mean, aes(x = Year, y = Mean_consumption, color = Region, group = 
 
 ```
 
+# Annual Electricity Consumption
+
+The increase in medians from year to year shows the increase in electricity consumption. This shows an upward trend in electricity consumption after the implementation of the permanent DST policy.
+
 ```{r}
 #| echo: true
 #| code-fold: true
@@ -65,6 +82,10 @@ ggplot(veri_long, aes(x = as.factor(Year), y = consumption)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
+# Total Annual Electricity Consumption
+
+The graph shows the total electricity consumption from 2001 to 2021. As can be seen from the graph, the impact of the decision implemented in 2016 on electricity consumption is observed. Since 2015, there has been a continuous increase in electricity consumption across the country.
+
 ```{r}
 #| echo: true
 #| code-fold: true
@@ -84,7 +105,9 @@ ggplot(annualy_tot, aes(x = as.factor(Year), y = total_consumption)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
+# Percentage Increase in Electricity Consumption (2016 vs 2015)
 
+This graph is based on the 2015 values to observe the percentage change in electricity consumption in 2016. According to the graph, electricity consumption increased in exactly 71 provinces in 2016.
 
 ```{r , echo=TRUE, fig.width=10, fig.height=12}
 #| echo: true
@@ -131,7 +154,11 @@ ggplot(veri, aes(x = Percentage_Increase, y = reorder(City, Percentage_Increase)
 
 ```
 
-command
+# Electricity Consumption on Maps (Before 2016 vs After 2016)
+
+In the first graph, the situation before and after the permanent daylight saving time application is observed on a map of Turkey. In each of the provinces shown, there is an increase in electricity consumption.
+
+### For Cities
 
 ```{r}
 #| echo: true
@@ -193,6 +220,8 @@ leaflet(data = veri_summary) |>
 
 ```
 
+### For Regions
+
 ```{r}
 #| echo: true
 #| code-fold: true
@@ -241,4 +270,4 @@ leaflet(data = veri_summary) |>
   )
 ```
 
-
+One of the main goals of the permanent daylight saving time application, which was implemented in 2016, was to save electricity. As shown by our analysis based on data from TURKSTAT, this application, used since 2016, indicates that no savings in electricity consumption were achieved until 2021. Moreover, as shown in the graphs, it can also be said that regions with a steady trend or a decreasing trend in electricity consumption experienced an increase.
