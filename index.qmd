@@ -24,10 +24,12 @@ Please stay tuned to follow our project activities.
 <div>
 
 1.  <a href=https://emu-hacettepe-analytics.github.io/emu430-fall2024-aozcanlab/" class="button">Ahmet Özcan</a>
+1.  <a href=https://emu-hacettepe-analytics.github.io/emu430-fall2024-aozcanlab/ class="button">Ahmet Özcan</a>
 
 2.  <a href=https://emu-hacettepe-analytics.github.io/emu430-fall2024-edayilmazlab/" class="button">Eda Yılmaz</a>
+2.  <a href=https://emu-hacettepe-analytics.github.io/emu430-fall2024-edayilmazlab/ class="button">Eda Yılmaz</a>
 
-3.  <a href=https://emu-hacettepe-analytics.github.io/emu430-fall2024-SemihGuneslab/" class="button">Semih Güneş</a>
+3.  <a href=https://emu-hacettepe-analytics.github.io/emu430-fall2024-SemihGuneslab/ class="button">Semih Güneş</a>
 
 </div>
 
@@ -52,6 +54,7 @@ To observe changes in electricity consumption, we use a dataset provided by the 
 - The main dataset from **TÜİK** shows household electricity use in 81 provinces between 2001 and 2021.
 
 - The dataset "Latitudes and Longitudes of Cities" includes coordinates to show electricity use on the map of Turkey.
+
 
 # Project Teaser
 
